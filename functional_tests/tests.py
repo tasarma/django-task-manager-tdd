@@ -6,11 +6,12 @@ from selenium.webdriver.firefox.options import Options
 
 import time
 import unittest
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+
 
 MAX_WAIT = 5
 
-class NewVisitorTest(LiveServerTestCase):  
+class NewVisitorTest(StaticLiveServerTestCase):  
     def setUp(self):  
         options = Options()
         options.add_argument("--headless")
