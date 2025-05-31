@@ -11,3 +11,4 @@ wheels/
 db.sqlite3
 /static
 src/db.sqlite3
+src/static
