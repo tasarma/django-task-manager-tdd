@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "ansible>=11.6.0",
     "django<6",
+    "docker>=7.1.0",
     "lxml[cssselect]>=5.4.0",
     "selenium>=4.33.0",
 ]
