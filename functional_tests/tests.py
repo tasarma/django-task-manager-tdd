@@ -7,6 +7,7 @@ from selenium.webdriver.firefox.options import Options
 import time
 import unittest
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+import os
 
 
 MAX_WAIT = 5
@@ -16,6 +17,10 @@ class NewVisitorTest(StaticLiveServerTestCase):
         options = Options()
         options.add_argument("--headless")
         self.browser = webdriver.Firefox(options=options)  
+
+        test_server = os.environ.get("TEST_SERVER")  
+        if test_server:
+            self.live_server_url = "http://" + test_server
 
     def tearDown(self):  
         self.browser.quit()
